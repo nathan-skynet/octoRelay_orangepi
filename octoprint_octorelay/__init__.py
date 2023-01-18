@@ -7,12 +7,11 @@ from octoprint.util import ResettableTimer
 from octoprint.util import RepeatedTimer
 
 import flask
-import RPi.GPIO as GPIO
+import orangepi.zero2
+from OPi import GPIO
 import os
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
+GPIO.setmode(orangepi.zero2.BOARD) 
 POLLING_INTERVAL = 0.3
 
 class OctoRelayPlugin(
