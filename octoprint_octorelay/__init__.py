@@ -240,7 +240,7 @@ class OctoRelayPlugin(
 
         GPIO.setwarnings(False)
 
-        GPIO.setup(relay_pin, GPIO.OUT)
+        ###GPIO.setup(relay_pin, GPIO.OUT)
         # XOR with inverted
         ledState = inverted != GPIO.input(relay_pin)
         
@@ -258,7 +258,7 @@ class OctoRelayPlugin(
             # toggle state
             ledState = not ledState
 
-            GPIO.setup(relay_pin, GPIO.OUT)
+            ###GPIO.setup(relay_pin, GPIO.OUT)
             # XOR with inverted
             GPIO.output(relay_pin, inverted != ledState)
 
@@ -314,7 +314,7 @@ class OctoRelayPlugin(
                 relay_pin = int(settings["relay_pin"])
                 inverted = settings['inverted_output']
 
-                GPIO.setup(relay_pin, GPIO.OUT)
+                ###GPIO.setup(relay_pin, GPIO.OUT)
                 # XOR with inverted
                 GPIO.output(relay_pin, inverted != True)
         self.update_ui()
@@ -362,7 +362,7 @@ class OctoRelayPlugin(
             confirmOff = settings[index]['confirmOff']
 
             # set the icon state
-            GPIO.setup(relay_pin, GPIO.OUT)
+            ###GPIO.setup(relay_pin, GPIO.OUT)
             self.model[index]['relay_pin'] = relay_pin
             self.model[index]['state'] = GPIO.input(relay_pin)
             self.model[index]['labelText'] = labelText
